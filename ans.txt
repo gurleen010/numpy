@@ -1,0 +1,68 @@
+
+Class 2
+Statistics and Numpy
+Q.1 - Create a numpy array with 10 elements of the shape(10,1) using 
+np.random and find out the mean of the elements using basic numpy 
+functions.
+
+
+Ans:-
+>>> x=np.random.random((10,1))
+>>> print(x)
+[[0.33089768]
+ [0.56036297]
+ [0.88725558]
+ [0.98124648]
+ [0.78025173]
+ [0.2190963 ]
+ [0.08247113]
+ [0.49051314]
+ [0.94849604]
+ [0.87465506]]
+>>> print(np.mean(x))
+0.6155246127185985
+
+
+Q.2 - Create a numpy array with 20 elements of the shape(20,1) using 
+np.random find the variance and standard deviation of the elements. 
+
+ans-2)
+import numpy as np
+import math
+x=np.random.random((20,1))
+print(x)
+print(np.std(x))
+print(pow(np.std(x),2))
+
+
+Q.3 - Create a numpy array A of shape(10,20) and B of shape (20,25) 
+using np.random. Print the matrix which is the matrix multiplication of 
+A and B. The shape of the new matrix should be (10,25). Using basic 
+numpy math functions only find the sum of all the elements of the new 
+matrix. 
+
+ans-3)
+>>> a=np.random.random((10,20))
+>>> b=np.random.random((20,25))
+>>> c=np.array([])
+>>> c=np.dot(a,b)
+>>> print(np.sum(c))
+
+Q.4 - Create a numpy array A of shape(10,1).Using the basic operations 
+of the numpy array generate an array of shape(10,1) such that each 
+element is the following function applied on each element of A.
+
+
+f(x)=1 / (1 + exp(-x)) 
+
+
+ans)
+
+A = np.random.rand(10,1)
+def func(x):
+    return (1 / (1 + np.exp(-x)))
+
+result = np.apply_along_axis(func, 0, A)
+print(result)
+
+
